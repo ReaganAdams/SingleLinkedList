@@ -1,5 +1,3 @@
-package LinkedList;
-
 public class LinkedList {
     public Node head;
     public Node tail;
@@ -63,27 +61,9 @@ public class LinkedList {
         }
     }
 
-    // Search for a node
-    public boolean searchNode(int nodeValue) {
-        if (head != null) {
-            Node tempNode = head;
-            int index = 0;
-            while (tempNode != null) {
-                if (tempNode.value == nodeValue) {
-                    System.out.println("Found the node: " + nodeValue + " at location: " + index);
-                    return true;
-                }
-                tempNode = tempNode.next;
-                index++;
-            }
-        }
-        System.out.println("Node not found");
-        return false;
-    }
-
     // Delete a node from the linked list
     public void deleteNode(int location) {
-        if (head == null) { // If the list doesn't exist
+        if (head == null) {
             System.out.println("The linked list does not exist");
             return;
         }
@@ -91,7 +71,7 @@ public class LinkedList {
         if (location == 0) { // Delete the first node
             head = head.next;
             size--;
-            if (size == 0) { // If the list is now empty
+            if (size == 0) { // If the list becomes empty
                 tail = null;
             }
         } else if (location >= size - 1) { // Delete the last node
